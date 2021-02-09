@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Qualifier(value = "userDaoImpl")
     private final UserDao userDao;
 
     public UserServiceImpl(UserDao userDao) {
