@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserMapperImpl implements UserMapper {
-
     @Override
     public List<User> getUserListFromDto(List<UserResponseDto> userResponseDto) {
         return userResponseDto
