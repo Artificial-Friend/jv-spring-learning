@@ -3,10 +3,12 @@ package service;
 import dao.UserDao;
 import java.util.List;
 import model.User;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
+    @Qualifier(value = "userDaoImpl")
     private final UserDao userDao;
 
     public UserServiceImpl(UserDao userDao) {
@@ -21,5 +23,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> listUsers() {
         return userDao.getAll();
+    }
+
+    @Override
+    public User get(Long id) {
+        return userDao.get(id);
     }
 }
